@@ -3,3 +3,14 @@
     Contenido Dinámico
   </mat-toolbar>
 </p>
+
+<div style="padding: 0 30px">
+  <button mat-raised-button color="primary" style="margin-bottom: 8px">Abrir Dialog Padre</button> <br>
+  <button mat-raised-button color="primary" (click)="clickButton()" style="margin-bottom: 8px">Abrir Sidenav Padre</button>
+
+  <div style="border: 1px solid #333333; border-radius: 16px; padding: 16px;">
+    <app-child (buttonClicked)="parentEventHandlerFunction($event)"></app-child>
+  </div>
+
+  <p style="margin-top: 8px">El string: {{valueEmittedFromChildComponent}}</p>
+</div>

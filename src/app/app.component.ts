@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'contenido-dinamico';
+
+  valueEmittedFromChildComponent: string = '';
+
+  clickButton(){
+    this.valueEmittedFromChildComponent = 'padre';
+  }
+
+  parentEventHandlerFunction(valueEmitted:string){
+    this.valueEmittedFromChildComponent = valueEmitted;
+  }
 }

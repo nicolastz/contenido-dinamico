@@ -7,7 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 import { ChildComponent } from './child/child.component';
+import { SidenavService } from './sidenav.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,12 @@ import { ChildComponent } from './child/child.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule
   ],
-  providers: [],
+  providers: [
+    SidenavService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

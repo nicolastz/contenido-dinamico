@@ -1,20 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { SidenavService } from './sidenav.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'contenido-dinamico';
 
-  valueEmittedFromChildComponent: string = '';
+  @ViewChild('sidenav') public sidenav: MatSidenav | undefined;
 
-  clickButton(){
-    this.valueEmittedFromChildComponent = 'padre';
+  constructor(private sidenavService: SidenavService) {}
+
+  ngOnInit() {
+    this.sidenavService.sidenavToggleSubject.subscribe(()=> {
+      this.sidenav?.toggle();
+    });
   }
 
-  parentEventHandlerFunction(valueEmitted:string){
-    this.valueEmittedFromChildComponent = valueEmitted;
-  }
+  // valueEmittedFromChildComponent: string = '';
+
+  // clickButton(){
+  //   this.valueEmittedFromChildComponent = 'padre';
+  // }
+
+  // parentEventHandlerFunction(valueEmitted:string){
+  //   this.valueEmittedFromChildComponent = valueEmitted;
+  // }
+
+  // inputSidenav() {
+  //   this.
+  // }
 }

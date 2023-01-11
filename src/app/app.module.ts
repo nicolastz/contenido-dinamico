@@ -11,11 +11,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { ChildComponent } from './child/child.component';
 import { SidenavService } from './sidenav.service';
+import { SidenavPadreComponent } from './sidenav/sidenav-padre/sidenav-padre.component';
+import { SidenavHijoComponent } from './sidenav/sidenav-hijo/sidenav-hijo.component';
+import { SidenavsComponent } from './sidenavs/sidenavs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    SidenavPadreComponent,
+    SidenavHijoComponent,
+    SidenavsComponent
   ],
   imports: [
     BrowserModule,

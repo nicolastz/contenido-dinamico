@@ -12,12 +12,17 @@ export class AppComponent implements OnInit {
 
   @ViewChild('sidenav') public sidenav: MatSidenav | undefined;
 
-  constructor(private sidenavService: SidenavService) {}
+  constructor(public sidenavService: SidenavService) {}
 
   ngOnInit() {
-    this.sidenavService.sidenavToggleSubject.subscribe(()=> {
+    this.sidenavService.sidenav.subscribe(()=> {
       this.sidenav?.toggle();
     });
+  }
+
+  abrirSidenav() {
+    this.sidenavService.pagina = 'padre';
+    this.sidenavService.sidenavToggle();
   }
 
   // valueEmittedFromChildComponent: string = '';

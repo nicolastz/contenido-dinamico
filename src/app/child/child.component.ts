@@ -13,7 +13,7 @@ export class ChildComponent {
   constructor(private sidenavService: SidenavService) {}
 
   abrirSidenav() {
-    this.pagina = 'hijo';
+    this.sidenavService.pagina = 'hijo';
     this.sidenavService.sidenavToggle();
   }
 

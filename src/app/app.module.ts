@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { ChildComponent } from './child/child.component';
 import { SidenavService } from './sidenav.service';
+import { DialogService } from './dialog.service';
 import { SidenavPadreComponent } from './sidenav/sidenav-padre/sidenav-padre.component';
 import { SidenavHijoComponent } from './sidenav/sidenav-hijo/sidenav-hijo.component';
 import { SidenavsComponent } from './sidenavs/sidenavs.component';
@@ -34,7 +35,8 @@ import { SidenavsComponent } from './sidenavs/sidenavs.component';
     MatDialogModule
   ],
   providers: [
-    SidenavService
+    SidenavService,
+    DialogService,
   ],
   bootstrap: [AppComponent]
 })

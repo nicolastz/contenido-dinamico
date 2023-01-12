@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { DialogService } from './dialog.service';
 import { SidenavService } from './sidenav.service';
 
 @Component({
@@ -12,17 +13,27 @@ export class AppComponent implements OnInit {
 
   @ViewChild('sidenav') public sidenav: MatSidenav | undefined;
 
-  constructor(public sidenavService: SidenavService) {}
+  constructor(public sidenavService: SidenavService,
+              public dialogService: DialogService) {}
 
   ngOnInit() {
     this.sidenavService.sidenav.subscribe(()=> {
       this.sidenav?.toggle();
     });
+
+    // this.dialogService.dialog.subscribe(()=> {
+    //   this.dialog?
+    // });
   }
 
   abrirSidenav() {
     this.sidenavService.pagina = 'padre';
     this.sidenavService.sidenavToggle();
+  }
+
+  abrirDialog() {
+    this.dialogService.pagina = 'padre';
+    this.dialogService.abrirDialog();
   }
 
   // valueEmittedFromChildComponent: string = '';

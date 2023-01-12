@@ -1,3 +1,10 @@
+<style>
+  .drawer{
+    border-left: 2px solid #d42bf0;
+    max-width: 450px;
+  }
+</style>
+
 <mat-drawer-container style="height: 100%" autosize>
   <mat-drawer-content style="background-color: #fff; height: 100%">
     <p>
@@ -14,11 +21,14 @@
         <app-child></app-child>
       </div>
     
-      <p style="margin-top: 8px">El string: {{this.sidenavService.pagina}}</p>
+      <p style="margin-top: 8px">
+        <span *ngIf="this.sidenavService.pagina == ''">No se ha abierto un sidenav aun</span>
+        <span *ngIf="this.sidenavService.pagina !== ''">El último sidenav fue abierto desde el {{this.sidenavService.pagina}}</span>
+      </p>
     </div>
   </mat-drawer-content>
 
-  <mat-drawer #sidenav mode="over" position="end">
+  <mat-drawer #sidenav mode="over" position="end" class="drawer">
     <app-sidenavs></app-sidenavs>
   </mat-drawer>
 </mat-drawer-container>

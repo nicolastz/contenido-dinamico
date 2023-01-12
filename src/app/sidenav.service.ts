@@ -6,7 +6,6 @@ import { BehaviorSubject } from 'rxjs';
 export class SidenavService {
   pagina:any = '';
 
-  // public sidenavToggleSubject: BehaviorSubject<any> = new BehaviorSubject(null);
   @Output() sidenav: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -15,7 +14,5 @@ export class SidenavService {
     this.sidenav.emit(this.pagina);
     console.log('sidenav lanzado');
     console.log(this.pagina);
-    // return this.sidenavToggleSubject.next(null);
-
   }
 }

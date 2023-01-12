@@ -1,3 +1,18 @@
-<p>sidenavs works!</p>
-<app-sidenav-hijo *ngIf="this.sidenavService.pagina == 'hijo'"></app-sidenav-hijo>
-<app-sidenav-padre *ngIf="this.sidenavService.pagina == 'padre'"></app-sidenav-padre>
+<style>
+    .sidenav-background{
+        background-color: #eee;
+        height: 100%;
+        padding: 2rem;
+    }
+    .text{
+        font-size: 22px;
+        font-weight: 500;
+        color: #212121;
+    }
+</style>
+
+<div class="sidenav-background">
+    <p class="text">Soy el mismo sidenav de siempre!</p>
+    <app-sidenav-hijo *ngIf="this.sidenavService.pagina == 'hijo'"></app-sidenav-hijo>
+    <app-sidenav-padre *ngIf="this.sidenavService.pagina == 'padre'"></app-sidenav-padre>
+</div>

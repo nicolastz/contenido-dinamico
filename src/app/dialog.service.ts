@@ -8,10 +8,12 @@ export class DialogService {
 
   @Output() dialog: EventEmitter<any> = new EventEmitter();
 
-  constructor(public dialogBase: MatDialog) { }
+  constructor(private dialogBase: MatDialog) { }
 
   public abrirDialog() {
-    this.dialogBase.open(DialogBase);
+    this.dialogBase.open(DialogBase, {
+      width: '400px',
+    });
     console.log('dialog lanzado');
     console.log(this.pagina);
   }
@@ -21,4 +23,8 @@ export class DialogService {
   selector: 'dialog-base',
   templateUrl: 'dialog/dialog-base.html',
 })
-export class DialogBase {}
+export class DialogBase {
+
+  constructor(public dialogService: DialogService) {}
+
+}

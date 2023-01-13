@@ -1,1 +1,11 @@
-<h2 mat-dialog-title>Test</h2>
+<style>
+    h2{
+        color: #9e1bb4 !important;
+    }
+</style>
+
+<h2 mat-dialog-title>Siempre el mismo Dialog</h2>
+<mat-dialog-content>
+    <app-dialog-hijo *ngIf="this.dialogService.pagina == 'hijo'"></app-dialog-hijo>
+    <app-dialog-padre *ngIf="this.dialogService.pagina == 'padre'"></app-dialog-padre>
+</mat-dialog-content>

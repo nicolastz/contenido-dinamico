@@ -25,6 +25,10 @@
         <span *ngIf="this.sidenavService.pagina == ''">No se ha abierto un sidenav aun</span>
         <span *ngIf="this.sidenavService.pagina !== ''">El último sidenav fue abierto desde el {{this.sidenavService.pagina}}</span>
       </p>
+      <p style="margin-top: 8px">
+        <span *ngIf="this.dialogService.pagina == ''">No se ha abierto un dialog aun</span>
+        <span *ngIf="this.dialogService.pagina !== ''">El último dialog fue abierto desde el {{this.dialogService.pagina}}</span>
+      </p>
     </div>
   </mat-drawer-content>
 

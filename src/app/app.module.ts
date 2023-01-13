@@ -12,10 +12,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { ChildComponent } from './child/child.component';
 import { SidenavService } from './sidenav.service';
-import { DialogService } from './dialog.service';
+import { DialogBase, DialogService } from './dialog.service';
 import { SidenavPadreComponent } from './sidenav/sidenav-padre/sidenav-padre.component';
 import { SidenavHijoComponent } from './sidenav/sidenav-hijo/sidenav-hijo.component';
 import { SidenavsComponent } from './sidenavs/sidenavs.component';
+import { DialogHijoComponent } from './dialog/dialog-hijo/dialog-hijo.component';
+import { DialogPadreComponent } from './dialog/dialog-padre/dialog-padre.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { SidenavsComponent } from './sidenavs/sidenavs.component';
     ChildComponent,
     SidenavPadreComponent,
     SidenavHijoComponent,
-    SidenavsComponent
+    SidenavsComponent,
+    DialogBase,
+    DialogHijoComponent,
+    DialogPadreComponent
   ],
   imports: [
     BrowserModule,

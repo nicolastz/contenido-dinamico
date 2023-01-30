@@ -1,27 +1,26 @@
-# ContenidoDinamico
+# Contenido Dinámico
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+## Objetivo / Target
 
-## Development server
+El obejtivo es crear un sistema para poder reutilizar componentes bases como el **dialog** o **sidenav**, pero con contenido dinámico en su interior dependiendo desde donde fue ejecutado.
+The target is create a system where we can reuse base components like a **dialog** or **sidenav**, but with dynamic content inside them depending where it was launch from.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Solución / Solution
 
-## Code scaffolding
+Para poder realizar esto, la solución a la cual llegué es que los componentes se comuniquen por medio de un **servicio**.
+To be able to do this, the solution which I reached is that the components communicate through a **service**.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Explicación / Explanation
 
-## Build
+Toda la funcionalidad para poder ejecutar cada componente (dialog o sidenav) se encuentra en el **servicio**. Luego tenemos un **emisor** que nos dice cuando se ejecute el componente y que contenido se va a mostrar. Por otro lado tenemos un **receptor** que ejecuta el componente y selecciona lo que se muestra.
+All the functionality to be able to execute each component (dialog or sidenav) is found in the **service**. Then we have an **emitter** which tells us when the component is executed and which content is going to be shown. On the other hand we have a **receiver** which execute the component and select what is shown.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Pruébalo / Test It
 
-## Running unit tests
+Puedes probarlo en [stackblitz](https://stackblitz.com/edit/contenido-dinamico?file=src/app/app.component.ts)
+You can test it on [stackblitz](https://stackblitz.com/edit/contenido-dinamico?file=src/app/app.component.ts)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Presentación Visual / Visual Presentation
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Puedes ver el proyecto con una presentación en mi [Behance](https://www.behance.net/gallery/161536611/Contenido-Dinamico)
+You can check the project with a presentation on my [Behance](https://www.behance.net/gallery/161536611/Contenido-Dinamico)
